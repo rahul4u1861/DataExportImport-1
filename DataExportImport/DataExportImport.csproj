@@ -128,7 +128,7 @@
     <Compile Include="Models\CustomerOwnedVehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DbContext.cs" />
-    <Compile Include="Service\ExportDataintoJsonFile.cs" />
+    <Compile Include="Service\ExportDataIntoJsonFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

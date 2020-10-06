@@ -1,22 +1,18 @@
 ﻿using DataExportImport.Models;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace DataExportImport.Service
 {
     public class DbContext
     {
-        SqlConnection con = new SqlConnection();
-        SqlCommand cmd = new SqlCommand("exe");
-        public void save(Customer customer)
+        private SqlConnection _con = new SqlConnection();
+        private SqlCommand _cmd = new SqlCommand("exe");
+        public void Save(Customer customer)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=HackathonDatabase;Integrated Security=True"))
+            using (var con = new SqlConnection("Data Source=.;Initial Catalog=HackathonDatabase;Integrated Security=True"))
             {
-                using (SqlCommand cmd = new SqlCommand("sp_save_customer", con))
+                using (var cmd = new SqlCommand("sp_save_customer", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = customer.FirstName;

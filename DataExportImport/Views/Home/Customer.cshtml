@@ -1,0 +1,193 @@
+﻿@using DataExportImport.Models
+@model DataExportImport.Models.Customer
+
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Customer</h4>
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.ID)
+                    <fieldset>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", id = "txtFN" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", id = "txtLN" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SSN, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.SSN, new { htmlAttributes = new { @class = "form-control", id = "txtSSN" } })
+                                    @Html.ValidationMessageFor(model => model.SSN, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", id = "txtMobile" } })
+                                    @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "txtEmail" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.Gender,
+                                                  new SelectList(Enum.GetValues(typeof(Gender))),
+                                                  "Select Gender", new { htmlAttributes = new { @class = "form-control", id = "txtGender" } })
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            @*<div class="form-group">
+                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", id = "txtFN" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", id = "txtLN" } })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SSN, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.SSN, new { htmlAttributes = new { @class = "form-control", id = "txtSSN" } })
+                                    @Html.ValidationMessageFor(model => model.SSN, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", id = "txtMobile" } })
+                                    @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "txtEmail" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
+                        </div>
+                    </fieldset>
+
+
+                    @*<table style="width: 100%;">
+                            <tr>
+                                <td>Table Heading</td>
+                                <td>
+                                    Data 1
+                                </td>
+                                <td>Data 2</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>*@
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="button" value="Add Owned Car" id="btnOwnedCar" class="btn btn-default" onclick="showAddVehicle()" />
+                        </div>
+                    </div>
+
+                    <div id="divOwnedVehicle">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="button" value="Export" id="btnExport" class="btn btn-default" onclick="exportDetails()" />
+
+                            <input type="submit" value="Create" id="btnCreate" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>}
+
+<h2>Import Data</h2>
+
+@using (Html.BeginForm("Import", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.TextBox("file", "", new { type = "file" }) <br />
+    <input type="submit" value="Import" class="btn btn-default" />
+    @ViewBag.Message
+</div>}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script language="javascript" type="text/javascript">
+
+    function showAddVehicle() {
+        $("#btnOwnedCar").click(function () {
+            $('#divOwnedVehicle').load("/Home/CustomerOwnedVehicle");
+        });
+    };
+
+    function exportDetails() {
+        var customer = {
+            FirstName: $('#txtFN').val(),
+            LastName: $('#txtLN').val(),
+            SSN: $('#txtSSN').val(),
+            Mobile: $('#txtMobile').val(),
+            Email: $('#txtEmail').val(),
+            Gender: $('#txtGender').val()
+        }
+        $.ajax({
+            type: 'POST',
+            url: "/Home/Export",
+            data: JSON.stringify(customer),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                alert("Exported Successfully");
+            },
+            error: function () {
+                alert("Error!")
+            }
+        });
+    };
+</script>

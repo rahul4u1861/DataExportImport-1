@@ -25,6 +25,11 @@ namespace DataExportImport.Service
                     cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = customer.Email;
                     cmd.Parameters.Add("@SSN", SqlDbType.VarChar).Value = customer.SSN;
                     cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = customer.Gender;
+                    cmd.Parameters.Add("@AddressLine1", SqlDbType.VarChar).Value = customer.AddressLine1;
+                    cmd.Parameters.Add("@AddressLine2", SqlDbType.VarChar).Value = customer.AddressLine2;
+                    cmd.Parameters.Add("@City", SqlDbType.VarChar).Value = customer.City;
+                    cmd.Parameters.Add("@State", SqlDbType.VarChar).Value = customer.State;
+                    cmd.Parameters.Add("@ZipCode", SqlDbType.VarChar).Value = customer.ZipCode;
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }

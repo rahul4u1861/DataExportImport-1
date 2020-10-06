@@ -26,13 +26,24 @@ namespace DataExportImport.Models
         public string Mobile { get; set; }
 
         public string Email { get; set; }
+        [Required]
         public Gender Gender { get; set; }
+        [Display(Name = "Address Line 1")]
+
+        public string AddressLine1 { get; set; }
+
+        [Display(Name = "Address Line 2")]
+        public string AddressLine2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string ZipCode { get; set; }
 
     }
 
     public enum Gender
     {
         Male,
-        Female
+        Female,
+        Other
     }
 }

@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.dataExportImportFooter {
+    display: flex;
+    justify-content: flex-start;
+}
+.backGroungImage {
+ background-image: url(Images/Car.jpg);
+}

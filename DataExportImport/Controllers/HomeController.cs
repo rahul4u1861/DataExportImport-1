@@ -9,6 +9,7 @@ namespace DataExportImport.Controllers
 {
     public class HomeController : Controller
     {
+        [HandleError]
         public ActionResult Customer()
         {
             var customer = (Customer)TempData["data"];
